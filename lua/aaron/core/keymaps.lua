@@ -11,7 +11,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear search highlights
 keymap.set("n", "x", '"_x') -- delete single character without copying into register
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>") 
+keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
@@ -38,3 +38,7 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+
+keymap.set("n", "<leader>`", ":vsplit<CR>:vertical resize -20<CR>:term<CR>")
+
+keymap.set("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true })
