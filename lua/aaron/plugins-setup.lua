@@ -104,6 +104,19 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+	-- Copy to clipboard
+	use({ "ojroques/nvim-osc52" })
+
+	-- Documentation
+	use({
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup({})
+		end,
+		-- Uncomment next line if you want to follow only stable versions
+		-- tag = "*"
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

@@ -42,3 +42,12 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 keymap.set("n", "<leader>`", ":vsplit<CR>:vertical resize -20<CR>:term<CR>")
 
 keymap.set("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true })
+
+-- copy to clip board
+keymap.set("n", "<leader>c", require("osc52").copy_operator, { expr = true })
+keymap.set("n", "<leader>cc", "<leader>c_", { remap = true })
+keymap.set("v", "<leader>c", require("osc52").copy_visual)
+
+local opts = { noremap = true, silent = true }
+keymap.set("n", "<Leader>nc", ":lua require('neogen').generate({ type = 'class' })<CR>", opts)
+keymap.set("n", "<Leader>nf", ":lua require('neogen').generate({ type = 'func' })<CR>", opts)
